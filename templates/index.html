@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AASK AI</title>
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+  <div class="nav">
+    <ul class="li">
+      <li><img src="static/favicon.ico" alt="ico" height="40px" width="70px"></li>
+      <li>Home</li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+  <div class="heading">
+    <div class="ttl">
+      <h1>Student Performance Analysis</h1>
+
+    </div>
+    <div class="grpName">
+      <h4> - by Script Squad</h4>
+    </div>
+  </div>
+
+  <div class="desc">
+    "Automation with Artificial Intelligence - Predict students' grades based on their performance and additional
+    factors."
+
+  </div>
+
+  <div class="predict" method=post>
+    <a href="/web">Explore Now!</a>
+  </div>
+  <center style="font-size: 35px;">Visualisations</center>
+    <div class="box" style="float: center;">
+    <div class="childBx sameBx">
+      <div class="smallBx ">
+
+        <div>
+          Tested on various regression models to find the best model for training on the dataset.
+        </div>
+      </div>
+      <div class="smallBx">
+        <img src="static/img/graph2.jpg" alt="img1" height="200px">
+      </div>
+
+    </div>
+    <div class="childBx sameBx">
+      <div class="smallBx"><img src="static/img/graph3.jpeg" alt="img1" height="200px"></div>
+      <div class="smallBx">
+
+        Heatmap of the training dataset showing the correlation between the features and the target variables.
+      </div>
+    </div>
+
+    <div class="childBx sameBx" style="right: 0px;">
+      <div class="smallBx ">
+
+        <div>
+          The Random Forest Regressor. The model was trained on the dataset and was able to efficiently predict the grades
+          of the students.
+        </div>
+      </div>
+      <div class="smallBx" >
+        <img src="static/img/graph1.jpg" alt="img1" height="200px">
+      </div>
+    </div>
+  </div>
+
+
+  <diV class="num">
+
+    <div class="txt">
+      <center>AASK.AI by the Numbers</center>
+    </div>
+    <div class="childBx" >
+      <div class="numBx" ">
+        <img src="static/img/acc.png" alt="img" height="50%">
+        <div>More than 90% Accuracy</div>
+      </div>
+      <div class="numBx">
+        <div>Tested 1000+ times</div>
+        <img src="static/img/test.png" alt="img" height="50%">
+      </div>
+      <div class="numBx">
+        <img id="data" src="static/img/data.png" alt="img" height="50%">
+        <div>Dataset with 30+ categories</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="cRight">
+    <a href="/about" title="Click to know more about us!">
+      copyright@ScriptSquad
+    </a>
+  </div>
+</body>
+
+</html>

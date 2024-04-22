@@ -1,0 +1,395 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #212128;
+  color: white;
+
+}
+
+.heading {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0px;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  width: 100%;
+  border-bottom: 0.5px solid #2d2843;
+  flex-wrap: wrap;
+  align-content: space-between;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  position: relative;
+  margin-left: 0px;
+  flex: 100%;
+  font-size: 15px;
+  font-family: Copperplate, Papyrus, fantasy;
+  text-decoration: none;
+  color: white;
+}
+
+.grpName {
+  position: absolute;
+  right: 0px;
+  top: 55px;
+  margin-right: 20px;
+  flex: 100%;
+  font-size: 24px;
+  font-family: "Brush Script MT", cursive;
+}
+
+.ttl {
+  flex: 100%;
+  padding-bottom: 0%;
+  text-align: center;
+  align-items: center;
+  font-family: cursive;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+
+.info {
+  text-align: center;
+  font-size: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.info h4:hover {
+  transform: scale(1.07);
+  text-shadow: 0 0 50px 5px #95d2f3ae;
+  transition-duration: 0.5s;
+}
+
+
+.form {
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 100%;
+  margin: auto;
+}
+
+.data:hover {
+  box-shadow: 0 0 50px 5px #95d2f3ae;
+  transform: scale(1.02);
+  transition-duration: 0.3s;
+}
+
+.data {
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 20px;
+  margin: auto;
+  width: 520px;
+  height: 520px;
+  overflow-y: auto;
+  -ms-overflow-style: scrollbar;
+  background-color: #212128;
+}
+
+.submit {
+  width: 100%;
+
+}
+
+.submit input[type="submit"] {
+  width: 100%;
+  margin: 20px auto;
+  background: blur;
+  background-color: rgba(52, 207, 238, 0.919);
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 17px;
+  font-size: 20px;
+  transition-timing-function: ease-out;
+  opacity: 85%;
+  text-decoration: none;
+}
+
+.submit input[type="submit"]:hover {
+  background-color: rgba(52, 207, 238, 0.919);
+  box-shadow: 0 0 50px 5px #48abe0;
+  transition-duration: 0.5s;
+  transform: scale(1.05);
+  width: 100%;
+  opacity: 100%;
+}
+
+.data select {
+  width: 100%;
+  text-align: left;
+  height: 30px;
+  border-radius: 10px;
+  right: 0%;
+}
+
+.lbl {
+  width: auto;
+}
+
+.form lebel {
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ring {
+  position: relative;
+  width: 800px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 9px var(--clr));
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+.output {
+  display: none;
+  position: fixed;
+  height: 400px;
+  width: 400px;
+  border: 4px solid rgb(54, 49, 70);
+  backdrop-filter: blur(13px);
+  background-color: rgba(67, 115, 134, 0.315);
+  border-color: 2px solid rgb(28, 26, 34);
+  border-radius: 20px;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  padding-top: 20px;
+  margin-top: 100px;
+  /* box-shadow: 0 0 50px 5px #0584c9d7; */
+}
+
+.scoring{
+  display: none;
+}
+
+#grade{
+  padding: 0px;
+}
+
+
+.digit{
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 10px;
+}
+
+:root {
+  --progress-bar-width: 200px;
+  --progress-bar-height: 200px;
+  --font-size: 2rem;
+}
+
+
+.circular-progress {
+  width: var(--progress-bar-width);
+  height: var(--progress-bar-height);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  position: absolute;
+  width: calc(var(--progress-bar-width) - 30px);
+  height: calc(var(--progress-bar-height) - 30px);
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+.percentage {
+  position: relative;
+  font-size: var(--font-size);
+  color: rgb(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --progress-bar-width: 150px;
+    --progress-bar-height: 150px;
+    --font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --progress-bar-width: 120px;
+    --progress-bar-height: 120px;
+    --font-size: 1rem;
+  }
+}
+
+
+
+.ttl h1 {
+  padding-top: 0;
+  margin-top: 0;
+  text-align: center;
+
+}
+
+h1 {
+  text-align: center;
+  font-family: Raleway;
+}
+
+select {
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+select.invalid {
+  background-color: #ffdddd;
+}
+
+select.valid {
+  background-color: #ffffff;
+}
+
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #0266d8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.07);
+}
+
+#prevBtn {
+  background-color: #0266d8;
+
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #b60bd8;
+}
+
+.tab select {
+  width: 100%;
+  text-align: left;
+  height: 30px;
+  border-radius: 10px;
+  right: 0%;
+}
+
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #585050;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgb(28, 23, 23, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@media (max-width: 800px) {
+  .heading {
+    flex-direction: column;
+  }
+}

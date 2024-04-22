@@ -1,0 +1,108 @@
+body {
+  background-color: #212128;
+  color: white;
+  font-size: 20px;
+}
+
+
+.childBx {
+  display: flex;
+  align-items: center;
+}
+
+.smallBx {
+  padding: 50px;
+  text-align: justify;
+
+}
+
+.sameBx {
+  background-color: #19151e;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid #2d2843;
+  margin: 0%;
+  display: flex;
+  cursor: pointer;
+}
+
+.nav ul li {
+  padding: 5px;
+  list-style: none;
+  color: white;
+  margin: 0px 5px;
+}
+
+.li {
+  display: flex;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.li li:hover {
+  background-color: #655d5d;
+  transform: scale(1.1);
+  transition-duration: .2s;
+  border-radius: 5px;
+}
+
+
+
+.numBx {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+  margin: 20px;
+  padding: 30px;
+  border: 1px solid #2d2843;
+  border-radius: 10px;
+  transition: all .5s ease-in-out;
+  background-color: #19151e5d;
+
+}
+
+.numBx:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+
+}
+
+.numBx div {
+  margin: 10px;
+}
+
+.num {
+  margin: 30px;
+
+}
+
+.txt {
+  margin-top: 70px;
+
+}
+
+.head {
+  font-size: 30px;
+  padding: 10px;
+}
+
+
+.cRight {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: gray;
+  border-top: 0.5px solid #2d2843;
+  padding-top: 4px;
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Predictor</title>
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/web.css') }}">
+</head>
+
+<body>
+  <div class="heading">
+    <div class="logo">
+      <a href="/"><img src="static/favicon.ico" alt="ico" height="50px" width="100px"></a>
+    </div>
+    <div class="ttl">
+      <h1>Student Performance Analysis</h1>
+
+    </div>
+    <div class="grpName">
+      <h4> - by Script Squad</h4>
+    </div>
+  </div><br><br>
+  <div class="output" id="output">
+    <center>
+      <div class="scoring">
+        <input class="score" id="score" placeholder="Enter your score..." min="0" max="100" value=>
+
+      </div>
+      <div class="circular-progress" data-inner-circle-color="rgb(84, 78, 173)" data-percentage=""
+        data-progress-color="skyblue" data-bg-color="grey">
+        <div class="inner-circle"></div>
+        <p class="percentage">0%</p>
+      </div>
+      <div class="digit">
+        Your aggregate marks is:
+        <p id="grade">
+          0%
+        </p>
+        <button id="closewin" value="Close" onclick="closeForm()" style="font-size: 25px;border-radius: 20px;">Close</button>
+      </div>
+  </div>
+  </center>
+  </div>
+  <div>
+    <div class="info">
+      <h4>Enter Student Information</h4>
+    </div>
+    <div class="ring">
+      <i style="--clr:#ff1100;"></i>
+      <i style="--clr:#00ff37;"></i>
+      <i style="--clr:#8c44ff;"></i>
+      <div>
+        <form id="regForm" class="form" method="post" onsubmit="openPop(event)">
+          <div class="data">
+            <div class="tab">
+              <h1 style="text-align: center;">Mandatory Informations</h1>
+
+              <p><label for="Age">Age(in years):</label></p>
+              <p><select onselect="this.className = ''" id="tab1" name="Age" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="18-21">18-21</option>
+                  <option value="22-25">22-25</option>
+                  <option value="26-60">26-60</option>
+                </select></p>
+
+              <p><label for="Sex">Sex:</label></p>
+              <p><select onselect="this.className = '' " id="tab1" name="Sex" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select></p>
+
+              <p><label for="MaritalStatus">Marital Status:</label></p>
+              <p><select onselect="this.className = '' " id="tab1" name="MaritalStatus" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Married">Married</option>
+                  <option value="Unmarried">Unmarried</option>
+                </select>
+              </p>
+
+              <p><label for="Scholarship">Scholarship:</label></p>
+              <p><select onselect="this.className = '' " id="tab1" name="Scholarship" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="0%">0%</option>
+                  <option value="25">25%</option>
+                  <option value="50">50%</option>
+                  <option value="75">75%</option>
+                  <option value="100">100%</option>
+                </select></p>
+
+              <p><label for="GPALast">GPA Last:</label></p>
+              <p><select onselect="this.className = '' " id="tab1" name="GPALast" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="0-2.00">0.00-2.00</option>
+                  <option value="2.00-3.99">2.00-3.99</option>
+                  <option value="4.00-5.99">4.00-5.99</option>
+                  <option value="6.00-7.99">6.00-7.99</option>
+                  <option value="8.00-10.00">8.00-10.00</option>
+                </select></p>
+
+              <p><label for="COURSEID">Courses:</label></p>
+              <p><select onselect="this.className = '' " id="tab1" name="COURSEID" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="1">First Language</option>
+                  <option value="2">Second Language</option>
+                  <option value="3">Third Language</option>
+                  <option value="4">Mathematics</option>
+                  <option value="5">Geography</option>
+                  <option value="6">History</option>
+                  <option value="7">Physical Science</option>
+                  <option value="8">Life Science</option>
+                  <option value="9">Computer</option>
+                </select>
+              </p>
+            </div>
+
+            <div class="tab">
+              <h1>Study Habits</h1>
+
+              <p><label for="ReadingSci">Reading Science Books:</label></p>
+              <p><select onselect="this.className = '' " id="ReadingSci" name="ReadingSci" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Sometimes">Sometimes</option>
+                  <option value="Often">Often</option>
+                  <option value="Never">Never</option>>
+                </select></p>
+
+              <p><label for="ReadingNonSci">Reading Non-Science Books:</label></p>
+              <p><select onselect="this.className = '' " id="ReadingNonSci" name="ReadingNonSci" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Sometimes">Sometimes</option>
+                  <option value="Often">Often</option>
+                  <option value="Never">Never</option>>
+                </select></p>
+
+              <p><label for="StudyHours">Study Hours in a Week:</label></p>
+              <p><select onselect="this.className = '' " id="StudyHours" name="StudyHours" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="0-4">0-4</option>
+                  <option value="5-9">5-9</option>
+                  <option value="10-14">10-14</option>
+                  <option value="15-19">15-19</option>
+                  <option value="20-24">20-24</option>
+                </select></p>
+
+              <p><label for="MidtermPrep-2">Midterm Preparation:</label></p>
+              <p><select onselect="this.className = '' " id="MidtermPrep-2" name="MidtermPrep-2" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Regular">Regular</option>
+                  <option value="Before Exam">Before Exam</option>
+                  <option value="Never">Never</option>
+                </select></p>
+
+              <p><label for="NotesTaken">Notes Taken:</label></p>
+              <p><select onselect="this.className = '' " id="NotesTaken" name="NotesTaken" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Always">Always</option>
+                  <option value="Sometimes">Sometimes</option>
+                  <option value="Never">Never</option>
+                </select></p>
+
+              <p><label for="Listening">Listening:</label></p>
+              <p><select onselect="this.className = '' " id="Listening" name="Listening" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Always">Always</option>
+                  <option value="Sometimes">Sometimes</option>
+                  <option value="Never">Never</option>
+                </select></p>
+            </div>
+
+            <div class="tab">
+              <h1>Family Support</h1>
+
+              <p><label for="Mother'sOccupation">Mother's Occupation:</label></p>
+              <p><select onselect="this.className = '' " id="Mother'sOccupation" name="Mother'sOccupation" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Self-employed">Self-Employed</option>
+                  <option value="PvtEmployee">Private Employee</option>
+                  <option value="GovtOfficer">Government Officer</option>
+                  <option value="Housewife">Housewife</option>
+                  <option value="Retired">Retired</option>
+                </select></p>
+
+              <p><label for="Father'sOccupation">Father's Occupation:</label></p>
+              <p><select onselect="this.className = '' " id="Father'sOccupation" name="Father'sOccupation" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Self-employed">Self-Employed</option>
+                  <option value="PvtEmployee">Private Employee</option>
+                  <option value="GovtOfficer">Government Officer</option>
+                  <option value="Housewife">Housemaker</option>
+                  <option value="Retired">Retired</option>
+                </select></p>
+
+              <p><label for="Income">Income:</label></p>
+              <p><select onselect="this.className = '' " id="Income" name="Income" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="135-200">135000-200000</option>
+                  <option value="201-270">201000-270000</option>
+                  <option value="271-340">271000-340000</option>
+                  <option value="341-410">341000-410000</option>
+                  <option value="above 410">above 410000</option>
+
+                </select></p>
+
+              <p><label for="Mother'sEducation">Mother's Education</label></p>
+              <p><select onselect="this.className = '' " id="Mother'sEducation" name="Mother'sEducation" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Primary">Primary</option>
+                  <option value="Secondary">Secondary</option>
+                  <option value="High">High</option>
+                  <option value="University">University</option>
+                  <option value="MSc.">MSc.</option>
+                  <option value="Ph.D.">Ph.D.</option>
+
+                </select></p>
+
+              <p><label for="Father'sEducation">Father's Education</label></p>
+              <p><select onselect="this.className = '' " id="Father'sEducation" name="Father'sEducation" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Primary">Primary</option>
+                  <option value="Secondary">Secondary</option>
+                  <option value="High">High</option>
+                  <option value="University">University</option>
+                  <option value="MSc.">MSc.</option>
+                  <option value="Ph.D.">Ph.D.</option>
+                </select></p>
+
+              <p><label for="ParentalStatus">Parental Status:</label></p>
+              <p><select onselect="this.className = '' " id="ParentalStatus" name="ParentalStatus" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Married">Married</option>
+                  <option value="Divorced">Divorced</option>
+                  <option value="Deceased">Deceased</option>
+                </select></p>
+            </div>
+
+            <div class="tab">
+              <h1>Study Impact</h1>
+
+              <p><label for="ProjectImpact">Project Impact:</label></p>
+              <p><select onselect="this.className = '' " id="ProjectImpact" name="ProjectImpact" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Positive">Positive</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Negative">Negative</option>
+                </select></p>
+
+              <p><label for="DiscussionInterest">Discussion Interest:</label></p>
+              <p><select onselect="this.className = '' " id="DiscussionInterest" name="DiscussionInterest" required>
+                  <option disabled selected value> -- select an option -- </option>
+                  <option value="Always">Always</option>
+                  <option value="Sometimes">Sometimes</option>
+                  <option value="Never">Never</option>
+                </select></p>
+            </div>
+
+            <div style="height: 40px; margin-bottom: 9px; padding-bottom: 7px;">
+              <div style="float:right; ">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1) " style="border-radius: 20px;">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)" style="border-radius: 20px;">Next</button>
+
+              </div>
+            </div>
+
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+              <div class="submit" id="sbmt">
+                <input type="submit" value="Predict" onsubmit="">
+              </div>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+
+            </div>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/web.js') }}"></script>
+  <script>
+    function predict(){
+    const customPercentageInput = document.getElementById("score");
+
+const circularProgress = document.querySelectorAll(".circular-progress");
+
+Array.from(circularProgress).forEach((progressBar) => {
+  const progressValue = progressBar.querySelector(".percentage");
+  const innerCircle = progressBar.querySelector(".inner-circle");
+  let startValue = -1,
+    endValue = Number(customPercentageInput.value) * 10,
+    speed = 40,
+    progressColor = progressBar.getAttribute("data-progress-color");
+
+    endValue = Math.floor(endValue);
+  const progress = setInterval(() => {
+    startValue++;
+    progressValue.textContent = `${startValue}%`;
+    progressValue.style.color = `${progressColor}`;
+
+    innerCircle.style.backgroundColor = `${progressBar.getAttribute(
+      "data-inner-circle-color"
+    )}`;
+
+    document.getElementById("grade").innerText = startValue + "%";
+    progressBar.style.background = `conic-gradient(${progressColor} ${startValue * 3.6
+      }deg, ${progressBar.getAttribute("data-bg-color")} 0deg)`;
+    if (startValue === endValue) {
+      clearInterval(progress);
+    }
+
+  }, speed);
+});
+    }
+  </script>
+</body>
+
+</html>
