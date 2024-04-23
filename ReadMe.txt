@@ -31,7 +31,7 @@ Thank you for considering contributing to AASK.AI To contribute, follow these st
 
 Contact:
 -------------
-For any inquiries or feedback, please contact the project maintainer at officialscriptsquad@gmail.com. You can also visit the [GitHub repository](https://github.com/username/project) for this project.
+For any inquiries or feedback, please contact the project maintainer at officialscriptsquad@gmail.com. You can also visit this GitHub repository, for this project.
 
 Acknowledgements:
 -------------
